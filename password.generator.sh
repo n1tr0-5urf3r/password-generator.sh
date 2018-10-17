@@ -24,10 +24,6 @@ availableChars=${#chars[@]}
 
 for i in $(seq 1 $1); do
         nextChar=$(($RANDOM % $availableChars))
-        echo ${chars[$nextChar]} >> /usr/local/bin/password.temp
+	password="$password${chars[$nextChar]}"
 done
-
-echo -e "\n"
-cat /usr/local/bin/password.temp | perl -pe 's/\n//'
-echo -e "\n"
-rm /usr/local/bin/password.temp
+echo $password
