@@ -4,6 +4,7 @@
 
 # Parameter
 # $1 password length
+#
 
 printUsage(){
         echo -e "\nUsage: "
